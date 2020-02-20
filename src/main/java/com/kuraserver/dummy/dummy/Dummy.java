@@ -2,6 +2,7 @@ package com.kuraserver.dummy.dummy;
 
 import cn.nukkit.Player;
 import cn.nukkit.entity.Entity;
+import cn.nukkit.entity.data.EntityMetadata;
 import cn.nukkit.entity.data.Skin;
 import cn.nukkit.item.Item;
 import cn.nukkit.level.Location;
@@ -26,9 +27,9 @@ public class Dummy extends Location implements Serializable {
     private Skin skin;
     private Item item;
 
-    public Dummy(UUID uuid, Location location, Skin skin, Item item){
+    public Dummy(UUID uuid, Location location, Skin skin, String name){
         this(uuid, location, skin);
-        this.item = item;
+        this.name = name;
     }
 
     public Dummy(UUID uuid, Location location, Skin skin){
@@ -105,15 +106,9 @@ public class Dummy extends Location implements Serializable {
 
     }
 
+    //毎tick呼び出される
     public void onUpdate(int currentTick){
-        System.out.println("a");
-    }
 
-    /*public void sendSkinTo(Player player){
-        PlayerSkinPacket pk = new PlayerSkinPacket();
-        pk.uuid = this.uuid;
-        pk.skin = this.skin;
-        pk.newSkinName =
-    }*/
+    }
 
 }

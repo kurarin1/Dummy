@@ -39,7 +39,7 @@ public class DummyCommand extends Command {
         switch(args[0]){
 
             case "create":
-                DummyManager.registerDummy( new Dummy(UUID.randomUUID(), (Player) sender, ((Player) sender).getSkin(), ((Player) sender).getInventory().getItemInHand()) );
+                DummyManager.registerDummy( new Dummy(UUID.randomUUID(), (Player) sender, ((Player) sender).getSkin()) );
                 sender.sendMessage("ダミーを召喚しました");
                 break;
 
