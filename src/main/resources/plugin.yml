@@ -1,0 +1,5 @@
+name: Dummy
+main: com.kuraserver.dummy.Main
+version: 0.0.1
+author: kurarin
+api: ["1.0.0"]
