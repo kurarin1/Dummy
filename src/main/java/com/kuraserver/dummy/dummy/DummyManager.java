@@ -1,6 +1,7 @@
 package com.kuraserver.dummy.dummy;
 
 import cn.nukkit.Server;
+import cn.nukkit.scheduler.NukkitRunnable;
 import com.kuraserver.dummy.Main;
 
 import java.io.File;
@@ -15,6 +16,13 @@ public class DummyManager {
         DummyManager.dummies = new HashMap<>();
 
         //new File(Main.getInstance().getDataFolder(), "dummies").mkdirs();
+
+        new NukkitRunnable() {
+            @Override
+            public void run() {
+                DummyManager.dummies.values().forEach(dummy -> dummy.onUpdate(Server.getInstance().getTick()));
+            }
+        }.runTaskTimer(Main.getInstance(), 0, 1);
 
         Server.getInstance().getPluginManager().registerEvents(new DummyEventHandler(), Main.getInstance());
     }

@@ -41,7 +41,7 @@ public class Dummy extends Location implements Serializable {
 
         this.eid = Entity.entityCount++;
         this.uuid = uuid;
-        this.name = "ダミー";
+        this.name = "";
         this.skin = Dummy.EMPTY_SKIN;
         this.item = Item.get(0);
     }
@@ -103,6 +103,10 @@ public class Dummy extends Location implements Serializable {
     //タッチされたときに呼び出される
     public void onTouch(Player player){
 
+    }
+
+    public void onUpdate(int currentTick){
+        System.out.println("a");
     }
 
     /*public void sendSkinTo(Player player){

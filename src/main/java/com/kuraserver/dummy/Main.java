@@ -14,7 +14,7 @@ public class Main extends PluginBase {
 
         DummyManager.init();
 
-        //Server.getInstance().getCommandMap().register("dummy", new DummyCommand());
+        Server.getInstance().getCommandMap().register("dummy", new DummyCommand());
 
         Server.getInstance().getPluginManager().registerEvents(new MainEventHandler(), this);
     }
