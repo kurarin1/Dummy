@@ -4,6 +4,10 @@
   <id>dummy</id>
   <name>Dummy</name>
   <url>https://raw.githubusercontent.com/kurarin1/Dummy/mvn-repo/</url>
+  <snapshots>
+    <enabled>true</enabled>
+    <updatePolicy>always</updatePolicy>
+  </snapshots>
 </repository>
 ```
 ```
